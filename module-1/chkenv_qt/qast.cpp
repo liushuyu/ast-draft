@@ -43,3 +43,16 @@ QString qast::get_ptable(){
         }
         return "GPT";
 }
+
+qint64 qast::get_freespace(){
+    QStorageInfo storage = QStorageInfo::root();
+    qDebug() << storage.rootPath();
+    if (storage.isReadOnly())
+        qDebug() << "isReadOnly:" << storage.isReadOnly();
+
+    qDebug() << "name:" << storage.name();
+    qDebug() << "fileSystemType:" << storage.fileSystemType();
+    qDebug() << "size:" << storage.bytesTotal()/1000/1000 << "MB";
+    qDebug() << "availableSize:" << storage.bytesAvailable()/1000/1000 << "MB";
+    return storage.bytesAvailable();
+}

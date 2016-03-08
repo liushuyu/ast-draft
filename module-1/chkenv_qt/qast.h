@@ -9,6 +9,7 @@
 #include <QByteArray>
 #include <QDataStream>
 #include <QException>
+#include <QStorageInfo>
 //end of Qt stuff
 
 //Below just for testing under Linux
@@ -27,6 +28,7 @@ public:
     static QString get_sysdrive();
     static QString get_ptable();
     static QString get_bloader();
+    static qint64 get_freespace();
 signals:
 
 public slots:
