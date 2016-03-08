@@ -1,0 +1,5 @@
+/build-*
+/module-1/build-*
+*.o
+moc_*
+
