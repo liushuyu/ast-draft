@@ -3,11 +3,9 @@ QT -= gui
 
 CONFIG += c++11
 
-TARGET = chkenv_qt
+TARGET = backup_qt
 CONFIG += console
 CONFIG -= app_bundle
-
-LIBS += -lmagic
 
 TEMPLATE = app
 
