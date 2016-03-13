@@ -37,10 +37,10 @@ QString qast::get_ptable(){
         ::magic_load(ptr, NULL);
         QString mgc_res = ::magic_buffer(ptr, in_data, in_data.size());
         ::magic_close(ptr);
-        if (mgc_res.contains(QRegExp("\\bMBR\\b"))){
+        if (mgc_res.contains(QRegExp("\\b0xee\\b"))){
             qDebug() << "Found MBR in libmagic match";
-            return "MBR";
-        }else if (mgc_res.contains(QRegExp("\\bGPT\\b"))) {
+            return "GPT";
+        }else if (mgc_res.contains(QRegExp("\\bDOS/MBR\\b"))) {
             qDebug() << "Found GPT in libmagic match";
             return "GPT";
         }else{
